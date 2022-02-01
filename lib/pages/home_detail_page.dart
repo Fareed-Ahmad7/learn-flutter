@@ -11,7 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: MyTheme.creamColor,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -28,38 +30,50 @@ class HomeDetailPage extends StatelessWidget {
                   StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "Add to cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
       body: SafeArea(
-        bottom: false,
+          bottom: false,
           child: Column(
-        children: [
-          Hero(
-                  tag: Key(catalog.id.toString()),
-                  child: Image.network(catalog.image)).h32(context),
-          Expanded(
-            child: VxArc(
-              height: 30.0,
-              edge: VxEdge.TOP,
-              arcType: VxArcType.CONVEY,
-              child: Container(
-               width: context.screenWidth,
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    catalog.name.text.xl4.color(MyTheme.darkBluish).bold.make(),
-                    catalog.desc.text.make(),
-                    10.heightBox,
-                  ],
-                ).py64(),
+            children: [
+              Hero(
+                      tag: Key(catalog.id.toString()),
+                      child: Image.network(catalog.image))
+                  .h32(context),
+              Expanded(
+                child: VxArc(
+                  height: 30.0,
+                  edge: VxEdge.TOP,
+                  arcType: VxArcType.CONVEY,
+                  child: Container(
+                    width: context.screenWidth,
+                    color: Colors.white,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          catalog.name.text.xl4
+                              .color(MyTheme.darkBluish)
+                              .bold
+                              .make(),
+                          catalog.desc.text.make(),
+                          10.heightBox,
+                              "Sanctus diam lorem takimata gubergren kasd et, dolor et aliquyam ipsum est justo sit lorem et Ea Lorem dolor magna ea et sea lorem amet sea. Sadipscing diam clita magna sit labore kasd dolore,Et et eos clita eirmod dolor lorem invidunt. Et nonumy est invidunt et. Stet vero aliquyam labore lorem et diam. duo amet nonumy."
+                              .text
+                              // .textStyle(context.captionStyle)
+                              .make()
+                              .p16()
+                              
+                        ],
+                      ).py64(),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ],
-      )),
+            ],
+          )),
     );
   }
 }
