@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_types_as_parameter_names
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_catalog/utils/routes.dart';
@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
 
-  // ignore: non_constant_identifier_names
+
   moveToHome(BuildContext) async {
     if(_formKey.currentState!.validate()){
     setState(() {
