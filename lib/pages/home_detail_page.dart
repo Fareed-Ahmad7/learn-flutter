@@ -12,16 +12,16 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.canvasColor,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
-        child: ButtonBar(
+        color: context.cardColor,
+        child: ButtonBar(  
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: Vx.mH8,
           children: [
-            "\$${catalog.price}".text.bold.xl4.color(MyTheme.darkBluish).make(),
+            "\$${catalog.price}".text.bold.xl4.color(context.accentColor).make(),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
@@ -50,12 +50,12 @@ class HomeDetailPage extends StatelessWidget {
                   arcType: VxArcType.CONVEY,
                   child: Container(
                     width: context.screenWidth,
-                    color: Colors.white,
+                    color: context.cardColor,
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
                           catalog.name.text.xl4
-                              .color(MyTheme.darkBluish)
+                              .color(context.accentColor)
                               .bold
                               .make(),
                           catalog.desc.text.make(),

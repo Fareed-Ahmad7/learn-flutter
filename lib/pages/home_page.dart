@@ -13,7 +13,6 @@ import 'package:flutter_tutorial_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -47,10 +46,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MyTheme.creamColor,
-        floatingActionButton: FloatingActionButton(onPressed: () => Navigator.pushNamed(context, MyRoutes.cartPageRoute),
-        backgroundColor: MyTheme.darkBluish,
-        child: Icon(CupertinoIcons.cart),
+        backgroundColor: context.canvasColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(
+            context,
+            MyRoutes.cartPageRoute,
+          ),
+          backgroundColor: MyTheme.darkBluish,
+          child: Icon(CupertinoIcons.cart),
         ),
         body: SafeArea(
           bottom: false,

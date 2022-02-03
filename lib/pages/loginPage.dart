@@ -1,8 +1,9 @@
-
-
+import 'package:flutter_tutorial_catalog/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/src/extensions/context_ext.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -35,12 +36,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
             child: Column(
               children: [
+                
                 Image.asset(
                   "assets/images/undraw_secure_login_pdn4.png",
                   fit: BoxFit.cover,
@@ -114,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontSize: 18),
                               ),
                         decoration: BoxDecoration(
-                          color: Colors.green,
+                          color: Colors.deepPurpleAccent,
                           // shape: changeButton? BoxShape.circle : BoxShape.rectangle,
                           borderRadius:
                               BorderRadius.circular(changeButton ? 50 : 8),
