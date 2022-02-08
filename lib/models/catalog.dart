@@ -1,5 +1,13 @@
+import 'dart:convert';
+
 class CatalogModel {
   static List<Item> items = [];
+
+//get item by id
+  static Item getById(int id) =>
+    items.firstWhere((element) => element.id == id, orElse: null);
+
+  static Item getByPosition(int pos) => items[pos];    
 }
 
 class Item {
@@ -10,8 +18,8 @@ class Item {
   final String color;
   final String image;
 
-  Item(
-      {required this.id,
+  Item({
+      required this.id,
       required this.name,
       required this.desc,
       required this.price,
@@ -20,21 +28,21 @@ class Item {
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
-        id: map["id"],
-        name: map["name"],
-        desc: map["desc"],
-        price: map["price"],
-        color: map["color"],
-        image: map["image"],
-    );  
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
   }
 
   toMap() => {
-    "id" : id,
-    "name" : name,
-    "desc" : desc,
-    "price" : price,
-    "color" : color,
-    "image" : image,
-  };
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }
