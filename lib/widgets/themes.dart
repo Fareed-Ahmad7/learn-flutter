@@ -33,4 +33,5 @@ class MyTheme {
   static Color darkBluish = const Color(0xff403b58);
   static Color darkCreamColor = Vx.blueGray900;
   static Color lightBluishColor = Vx.purple400;
+  static Color lightGreen = Vx.coolGray600;
 }

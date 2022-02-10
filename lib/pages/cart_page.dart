@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_catalog/models/cart.dart';
 import 'package:flutter_tutorial_catalog/widgets/themes.dart';
 import 'package:velocity_x/src/extensions/context_ext.dart';
 import 'package:velocity_x/src/extensions/num_ext.dart';
@@ -21,7 +22,7 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Placeholder().p32().expand(),
+          _CartList().p32().expand(),
           Divider(),
           _CartTotal(),
         ],
@@ -35,19 +36,57 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center ,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          "\$9999".text.xl5.color(context.accentColor).make(),
+          "\$${_cart.totalPrice}".text.xl5.color(context.accentColor).make(),
           30.widthBox,
           ElevatedButton(
-            onPressed: () {},
-            child: "Buy".text.extraBold.black.make(),
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(context.accentColor)),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "buying is not supported yet.".text.make(),
+              ));
+            },
+            child: "Buy".text.extraBold.white.make(),
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all(MyTheme.darkBluish)),
           ).w32(context)
         ],
+      ),
+    );
+  }
+}
+
+class _CartList extends StatefulWidget {
+  const _CartList({Key? key}) : super(key: key);
+
+  @override
+  State<_CartList> createState() => _CartListState();
+}
+
+class _CartListState extends State<_CartList> {
+  final _cart = CartModel();
+
+  @override
+  Widget build(BuildContext context) {
+    return _cart.items.isEmpty? "cart is empty".text.xl.center.make() :  ListView.builder(
+      itemCount: _cart.items.length,
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(Icons.done),
+        trailing: IconButton(
+          onPressed: () {
+            _cart.remove(_cart.items[index]);
+            setState(() {
+              
+            });
+          },
+          icon: Icon(Icons.remove_circle_outline),
+        ),
+        title: _cart.items[index].name.text.make(),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_catalog/models/catalog.dart';
+import 'package:flutter_tutorial_catalog/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter_tutorial_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -17,21 +18,17 @@ class HomeDetailPage extends StatelessWidget {
       backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
         color: context.cardColor,
-        child: ButtonBar(  
+        child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: Vx.mH8,
           children: [
-            "\$${catalog.price}".text.bold.xl4.color(context.accentColor).make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(MyTheme.darkBluish),
-                shape: MaterialStateProperty.all(
-                  StadiumBorder(),
-                ),
-              ),
-              child: "Add to cart".text.make(),
-            ).wh(120, 50)
+            "\$${catalog.price}"
+                .text
+                .bold
+                .xl4
+                .color(context.accentColor)
+                .make(),
+            AddToCart(catalog: catalog,).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -60,12 +57,11 @@ class HomeDetailPage extends StatelessWidget {
                               .make(),
                           catalog.desc.text.make(),
                           10.heightBox,
-                              "Sanctus diam lorem takimata gubergren kasd et, dolor et aliquyam ipsum est justo sit lorem et Ea Lorem dolor magna ea et sea lorem amet sea. Sadipscing diam clita magna sit labore kasd dolore,Et et eos clita eirmod dolor lorem invidunt. Et nonumy est invidunt et. Stet vero aliquyam labore lorem et diam. duo amet nonumy."
+                          "Sanctus diam lorem takimata gubergren kasd et, dolor et aliquyam ipsum est justo sit lorem et Ea Lorem dolor magna ea et sea lorem amet sea. Sadipscing diam clita magna sit labore kasd dolore,Et et eos clita eirmod dolor lorem invidunt. Et nonumy est invidunt et. Stet vero aliquyam labore lorem et diam. duo amet nonumy."
                               .text
                               // .textStyle(context.captionStyle)
                               .make()
                               .p16()
-                              
                         ],
                       ).py64(),
                     ),

@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             context,
             MyRoutes.cartPageRoute,
           ),
-          backgroundColor: MyTheme.darkBluish,
+          backgroundColor: MyTheme.lightGreen,
           child: Icon(CupertinoIcons.cart),
         ),
         body: SafeArea(
