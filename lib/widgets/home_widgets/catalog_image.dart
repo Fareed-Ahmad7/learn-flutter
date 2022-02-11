@@ -3,7 +3,7 @@ import 'package:velocity_x/src/extensions/context_ext.dart';
 import 'package:velocity_x/src/flutter/container.dart';
 import 'package:velocity_x/src/flutter/padding.dart';
 import 'package:velocity_x/src/flutter/sizedbox.dart';
-import 'package:flutter_tutorial_catalog/widgets/themes.dart';
+// import 'package:flutter_tutorial_catalog/widgets/themes.dart';
 
 class CatalogImage extends StatelessWidget {
   const CatalogImage({Key? key, required this.image}) : super(key: key);
