@@ -1,16 +1,5 @@
 # flutter_tutorial_catalog
 
-A new Flutter project.
+<img width="399" alt="Screenshot 2022-02-03 at 9 37 55 PM" src="https://user-images.githubusercontent.com/90202062/175321396-9f80f5af-2f68-4651-884a-eb01e4901c0f.png">
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+this flutter app is developed while learning flutter for the first time.
